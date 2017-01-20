@@ -21,7 +21,7 @@ public class IntegratorRoutes  extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 
-        from("ftp://localhost:21/tempD?username=delhivery&password=welcome@123&autoCreate=false&noop=true&idempotentKey=${file:modified}")
+        from("ftp://localhost:21/tempD?username=xxxxxxxxx&password=xxxxxxx&autoCreate=false&noop=true&idempotentKey=${file:modified}")
                 .log("RecivedMessage::::Validating::::::::=>>> ${body}")
                 .filter().method("customProccesorImpl" ,"validate")
                     .to("bean:customProccesorImpl?method=transformCreateOrder")
